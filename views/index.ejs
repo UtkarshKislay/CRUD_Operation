@@ -33,20 +33,30 @@
                 <th scope="col">No</th>
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
-                <th scope="col">fees</th>  
+                <th scope="col">Fees</th>  
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
+       
               <% for(let i=0;i<data.length;i++){ %>
               <tr>
-                <td><% (i+1) %></td>
-                <td><% data.name %></td>
-                <td><% data.age %></td>
-                <td><% data.fees %></td>
+                <td><%= (i+1) %></td>
+                <td><%= data[i].name %></td>
+                <td><%= data[i].age %></td>
+                <td><%= data[i].fees %></td>
                 <td>
-                  <i class="fa fa-pen-square text-info"></i>
-                  <i class="fa fa-trash text-danger"></i>
+                  <form action="/student/edit/<%= data[i]._id %>" method="get" class="d-inline">
+                    <button class="btn">
+                      <i class="fa fa-pen-square text-info"></i>
+                    </button>
+                  </form>
+                  <form action="/student/delete/<%= data[i]._id %>" method="post" class="d-inline">
+                    <button class="btn">
+                      <i class="fa fa-trash text-danger"></i>
+                    </button>
+                  </form>
+                  
                 </td>
               </tr>
               <% } %>

@@ -4,7 +4,7 @@ const router =express.Router();
 
 router.get('/',StudentController.getAllDocs);
 router.post('/',StudentController.createDoc);
-router.get('/edit',StudentController.editDoc);
+router.get('/edit/:id',StudentController.editDoc);
 router.post('/update/:id',StudentController.updateDocById);
 router.post('/delete/:id',StudentController.deleteById);
 

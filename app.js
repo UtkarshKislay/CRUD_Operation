@@ -5,12 +5,12 @@ import web from './routes/web.js';
 const app=express();
 ConnectDB();
 
-
-// app.use(express.static("public"));//midleware
+app.use(express.urlencoded({extended:false}));
+app.use(express.static("public"));//midleware
 
 app.use('/student',express.static(join(process.cwd(),"public")));
 
-app.set('views','./views');//by default set to views folder
+app.set('views','views');//by default set to views folder
 
 app.set("view engine","ejs");//template engine other as pug, etc
 
