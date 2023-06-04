@@ -3,8 +3,10 @@ import StudentController from '../controller/studentController.js';
 const router =express.Router();
 
 router.get('/',StudentController.getAllDocs);
-router.get('/edit',(req,res)=>{
-    res.render('edit');
-});
+router.post('/',StudentController.createDoc);
+router.get('/edit',StudentController.editDoc);
+router.post('/update/:id',StudentController.updateDocById);
+router.post('/delete/:id',StudentController.deleteById);
+
 
 export default router;
