@@ -1,6 +1,7 @@
+
 class StudentController{
     static getAllDocs=(req,res)=>{
-        res.render('indes');
+        res.render('index');
     }
 }
 
